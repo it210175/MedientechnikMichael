@@ -1,0 +1,216 @@
+﻿<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Transitions + Transforms</title>
+        <meta name="description" content="Beispiele">
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+				background-color: #212121;
+			}
+			header {
+				color: #fff;
+				background-color: #70a757;
+				margin-bottom: 5%;
+			}
+			h1 {
+				margin: 0;
+				padding: 2% 0;
+				text-align: center;
+			}
+			
+			#wrapper {
+				width: 100%;
+				background-color: #212121;
+				padding: 0 10%;
+				position: relative;
+			}
+			div {
+				width: 80%;
+				height: 10vw;
+				padding: 5%;
+				margin-bottom: 10%;
+				box-sizing: border-box;
+				border-radius: 1em;
+				color: #fff;
+				background-color: #70a757;
+				-webkit-user-select: none;
+				user-select: none;
+			}
+			div > p {
+				margin: 0;
+				font-size: 1.2em;
+				text-align: left;
+			}
+
+			p {
+				margin: auto;
+				text-align: center;
+				margin-bottom: 5%;
+			}
+
+
+		/* ---- HIER BEGINNT DEIN CODE ---- */
+
+
+		
+		/* Transition 1 - Box ändert Hintergrundfarbe */
+			.tr1 {
+				background-color: blue;
+
+				transition: background-color 2s ease-in-out;
+			}
+
+			.tr1:hover {
+				background-color: red;
+			}
+
+			
+
+		/* Transition 2 - Box ändert Transparenz auf 20%, Textfarbe ändern */
+			.tr2 {
+				background-color: red;
+
+				/*opacity: 0.5;*/
+
+				transition: background-color 2s ease-in-out;
+				transition-delay: 1.5s;
+			}
+
+			.tr2:hover {
+				background-color: rgba(255, 0, 0, 0.2);
+			}
+		
+
+
+		/* .tf_1 - Box dreht sich */
+			.tf_1 {
+				transition: transform 3s ease-in-out;
+			}
+
+			.tf_1:hover {
+				transform:rotate(99deg);
+			}
+
+
+		/* .tf_2 -  Bei Hover um -30 Grad drehen */
+			.tf_2 {
+				/*transition: transform 2s ease-in-out, width 1.5s ease-in-out;
+				width: 80%;*/
+
+				transition: transform 2s ease-in-out;
+			}
+
+			.tf_2:hover {
+				transform: rotate(-30deg) scale(0.5);
+				/*width: 50%;*/
+			}
+
+
+
+		/* .tf_3 - Skaliere auf Faktor 1,2 + Änderung Hintergrundfarbe */
+			.tf_3 {
+				transition: transform 2s ease-in-out, background-color 2s ease-in-out;
+			}
+
+			.tf_3:hover {
+				transform: scale(1.2);
+				background-color: red;
+			}
+
+
+
+		/* .tf_4 - Entlang X-Achse = horizontale Achse verschieben */
+		.tf_4 {
+			transition: transform 2s ease-in-out, font-size 2s ease-in-out;
+		}
+		.tf_4:hover {
+			transform: translate(20px);
+			font-size: larger;
+		}
+
+
+
+
+		/* .tf_5 - Box doppelt so groß + verziehen */
+		.tf_5 {
+				transition: transform 2s ease-in-out;
+			}
+
+		.tf_5:hover {
+			transform: scale(2) skew(30deg);
+		}
+
+
+
+		/* .tf_6 - Box entlang X-Achse spiegeln */
+		.tf_6 {
+			transition: transform 2s ease-in-out;
+		}
+
+		.tf_6:hover {
+			transform: scaleX(-1);
+		}
+
+
+
+	
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Transition mit Transform-Property</h1>
+		</header>
+
+
+		<div id="wrapper">
+            
+			<div class="tr1">
+				<p>Bei mir ändert sich die Hintergrundfarbe!</p>
+			</div>
+
+			<div class="tr2">
+				<p>Fade-Out auf 20 % Transparenz mit 1.5s Delay. Textfarbe verändern.</p>
+			</div>
+	
+			<!---------------  Start der Transformation Übungen  ------------------->
+
+			<div class="tf_1">
+				<p>Diese Box dreht sich!</p>
+			</div>
+
+
+			<div class="tf_2">
+				<p>Diese Box dreht sich um -30 Grad(ROTATE) und wird kleiner! (SCALE)</p>
+			</div>
+
+
+			<div class="tf_3">
+				<p>Skaliere diese Box auf den Faktor 1,2. Ändere gleichzeitig die Hintergrundfarbe.</p>
+			</div>
+
+
+			<div class="tf_4">
+				<p>Verschiebe die Box entlang der horizontalen Achse (TRANSLATE). Ändere dabei die Schriftgröße.</p>
+			</div>
+
+
+			<div class="tf_5">
+				<p>Diese Box wird doppelt so groß, und verzogen (SKEW). </p>
+			</div>
+
+
+			<div class="tf_6">
+				<p>Diese Box wird entlang der X-Achse gespiegelt. Dazu mit -1 verändern. (SCALE X)</p>
+			</div>
+
+			<br><br><br>
+            
+		</div>
+        
+	</body>
+</html>
